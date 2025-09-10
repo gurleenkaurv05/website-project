@@ -13,6 +13,7 @@ To learn the basics of web development by using HTML, CSS, and JavaScript in a p
 - HTML – for structuring the content of the website
 - CSS – for styling and layout
 - JavaScript – for adding simple interactivity
+- Visual Studio Code - code editor used for writing the code in various languages
 
 📄 **Website Contents**
 - Homepage with an introduction to the destination
