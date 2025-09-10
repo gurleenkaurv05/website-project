@@ -2,6 +2,7 @@
 Dette prosjektet ble gjennomført som en del av programfaget infromasjonsteknologi 1 på videregående skole. Prosjektet går ut på å lage en nettside om en reisedestinasjon, og jeg valgte Sør-Korea. 
 
 **Formål**
+
 Lære grunnleggende webutvikling og bruke HTML, CSS og JavaScript i et prosjekt om selvvalgt reisedestinasjon.
 
 **Teknologier brukt**
