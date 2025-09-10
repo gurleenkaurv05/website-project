@@ -1,20 +1,21 @@
-# Nettsideprosjekt om en reisedestinasjon
-Dette prosjektet ble gjennomført som en del av programfaget infromasjonsteknologi 1 på videregående skole. Prosjektet går ut på å lage en nettside om en reisedestinasjon, og jeg valgte Sør-Korea. 
+# Website Project: Travel Destination
 
-**Formål**
+This project was completed as part of the subject Information Technology 1 in upper secondary school.
+The task was to create a website about a travel destination, and I chose South Korea.
+**NOTE!** The following file directs to the home page: index.html
 
-Lære grunnleggende webutvikling og bruke HTML, CSS og JavaScript i et prosjekt om selvvalgt reisedestinasjon.
-
-
-**Teknologier brukt**
-- HTML -> strukturering av innholdet på nettsiden
-- CSS -> styling og layout av nettsiden
-- JavaScript -> enkelt interaktivitet på nettsiden
+🎯 **Purpose**
+To learn the basics of web development by using HTML, CSS, and JavaScript in a project based on a self-chosen travel destination.
 
 
-**Nettsiden inneholder følgende**
-- Hjemmeside med en innledning til destinasjonen
-- Planlegg reisen (reiser, hotell, kollektivtransport, billeie)
-- Attraksjoner og aktiviteter (aktivitetspakke)
-- Kultur (klær, mat, tradisjonell musikk, historie, kunst, festivaler)
-- Utforsk Seoul (ting å gjøre, hva skjer i Seoul, bildegalleri av Seoul)
+🛠️ **Technologies Used**
+HTML – for structuring the content of the website
+CSS – for styling and layout
+JavaScript – for adding simple interactivity
+
+📄 **Website Contents**
+- Homepage with an introduction to the destination
+- Plan Your Trip (flights, hotels, public transport, car rental)
+- Attractions and Activities (activity packages and suggestions)
+- Culture (clothing, food, traditional music, history, art, festivals)
+- Explore Seoul (things to do, what's happening in Seoul, photo gallery of the city)
