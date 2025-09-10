@@ -2,7 +2,7 @@
 
 This project was completed as part of the subject Information Technology 1 in upper secondary school.
 The task was to create a website about a travel destination, and I chose South Korea.
-**NOTE!** The following file directs to the home page: index.html
+**NOTE!** The following file directs to the home page: index.html.
 
 🎯 **Purpose**
 
