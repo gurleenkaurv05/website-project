@@ -1,0 +1,180 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 100%;
+}
+
+/*menybaren*/ 
+.menybar {
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    z-index: 999;                               /*bestemmer hvilke element som kommer over et annet. I dette tilfelle skal menybaren være over de andre elementene under. Det elementet med høyest z-index blir plassert øverst.*/
+    top: 0;
+    width: 100%;
+    height: 50px; 
+    border-bottom: 1px solid #d3d3d3;
+    padding: 20px;
+    justify-content: space-between;
+}  
+  
+.menybar a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center; 
+    padding-top: 50%;  
+    padding-bottom: 50%;
+    padding: 20px 16px; 
+    font-size: 17px;
+    text-decoration: none;
+    margin-right: 50px; 
+}
+  
+  /* når musepekeren er over så skifter skriften farge*/
+  .menybar a:hover{
+    color: #CD2E3A; 
+    transition: 0.8s;             /*hvor lang tid fargeskiftingen tar, her er den 0.8 sekunder som er realtivt fort*/
+  }
+  
+.logo{ 
+    width: 80px;
+    margin-left: 50px;
+    align-items: left;
+    margin-top: -18px;  
+}
+
+
+/* bakgrunnen for bilbooking siden */
+#bakgrunn img{
+  background-size: cover;
+  height: 101vh; 
+  width: 100%;
+}
+
+.overlag {          /* legger på det svarte overlaget på bildet */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 101vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* overskrift for denne sider*/
+.overskriftAktivitet{
+  z-index: 2;
+  width: 500px;
+  margin-top: -480px; 
+  text-align: center;
+  color: #CD2E3A; 
+  position: absolute; 
+  border: 2px solid #d3d3d3; 
+  padding: 10px; 
+  background-color: rgba(0, 0, 0, 0.029);
+  margin-left: 257px;
+  color: white; 
+  line-height: 1.5;
+}
+
+.overskriftAktivitet h1{
+  margin-bottom: -10px; 
+}
+
+
+/* css for aktivitetspakken */
+form{
+  z-index: 2; 
+  margin-left: 780px; 
+  margin-top: -600px;
+  margin-right: 30px; 
+  border: 2px solid #d3d3d3; 
+  padding: 30px; 
+  width: 400px;
+  height: 450px;
+  position: absolute; 
+  background-color: rgba(0, 0, 0, 0.029);
+  color: white; 
+  justify-content: center;
+}
+
+form p{
+  font-size: 20px; 
+  margin-top: -5px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  color: #CD2E3A; 
+}
+
+#resultat {
+  margin-left: 30px;
+  margin-top: 10px;
+  z-index: 3;                               /* gjør at resultatet vises over bildet */
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.outdoor select, .family select, .water select{
+  width: 250px;
+  padding: 3px; 
+  margin-bottom: 5px;
+}
+
+.antallTimer select {
+  padding: 3px; 
+}
+
+#button {                     /* knappen helt nederst som gjør det mulig å booke bilen */
+  padding: 10px; 
+  width: 100px;
+  background-color: #CD2E3A;
+  color: white; 
+  border: none; 
+  cursor: pointer;
+  border-radius: 10px;
+  width: 250px;
+  margin-top: 10px; 
+}
+
+
+/* bildegalleriet med bilder */
+.sliderOverskrift h1{
+  text-align: center;
+  color: #CD2E3A; 
+  margin-top: 30px;
+  margin-bottom: -10px;
+}
+
+.slider img{
+  transform: 0.7s;
+  cursor: pointer; 
+  background-size: cover;
+  transform: scale (1);                                    /*her er bildet i normal størrelse, altså ved scale(1) */
+  height: 600px; 
+  width: 900px; 
+  background-size: cover;
+}
+
+/*får bilde til å zoome inn når musen er over bildet, altså hover*/
+.slider img:hover{
+  transform: scale(1.03)
+}
+
+.slider{
+  display: grid; 
+  grid-auto-flow: column;
+  gap: 20px; 
+  overflow-y: auto;                   /*en skrollbar for brukeren som gjør det mulig å skrolle og se gjennom bildene */
+  overscroll-behavior-x: contain;     /* denne fohindrer brukeren i å skrolle utover bildene, altså det er ikke mulig å skrolle etter siste bilde*/
+  scroll-snap-type: x mandatory;      /*fører til en mer glidende skrolling, som er bedre for brukeren. "x-mandatory" er at brukeren scroller horisontalt framfor vertikalt */
+  scrollbar-width: none;              /* skrollbaren vises ikke på selve siden, men brukeren skroller via touch eller styreplate*/
+  margin-left: 30px;  
+  margin-right: 30px; 
+  margin-bottom: 20px; 
+  margin-top: 30px;
+  height: 660px;
+}

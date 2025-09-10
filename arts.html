@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine Arts</title>
+    <link rel="stylesheet" href="arts.css">
+    <link rel="icon" type="image/x-icon" href="./bilder/korea.png">
+</head>
+<body>
+    <div class="menybar">
+        <a href="exploreSeoul.html">Explore Seoul</a>
+        <a href="culture.html">Culture</a>
+        <a href="attractionsAndActivities.html">Attractions and activities</a>
+        <a href="planYourTrip.html">Plan your trip</a>
+        <a href="index.html">Home</a>
+
+        <img src="./bilder/korea.png" alt="logo" class="logo">
+    </div> 
+
+    <div class="overskrift">
+        <h2> Fine Arts</h2>
+    </div>
+
+        <!-- Bilde galleriet på siden-->                        <!-- Kilde: https://www.youtube.com/watch?v=sHG3Sf6XN9g&ab_channel=EasyTutorials-->
+        <div class="hel-bilde" id="helBildeBoks">
+            <img src="./bilder/arts1.jpg" id="helBilde">
+            <span onclick="lukkHelBilde()">X</span>             <!-- dette skal være knappen som du trykker på for å lukke oversiden og vi legger til funksjonen lukkFullBilde()-->
+        </div>
+    
+        <div class="bilde-galleri">            
+            <img src="./bilder/arts1.jpg" onclick="apneHelBilde(this.src)">                <!-- legger til funksjonen apneFullBilde() for å åpne bilde ved å klikke på det-->
+            <img src="./bilder/arts2.jpg" onclick="apneHelBilde(this.src)">                         <!-- this.src gjør at det følgende bilde blir vist-->
+            <img src="./bilder/arts3.jpg" onclick="apneHelBilde(this.src)">
+            <img src="./bilder/arts4.jpg" onclick="apneHelBilde(this.src)">
+            <img src="./bilder/arts5.jpg" onclick="apneHelBilde(this.src)">
+            <img src="./bilder/arts6.jpg" onclick="apneHelBilde(this.src)">
+    
+        </div>
+        
+        <script>
+            let helBildeBoks = document.getElementById("helBildeBoks");                     //henter elementene med id fra div-classen "hel-bilde"
+            let helBilde = document.getElementById("helBilde");
+    
+            function apneHelBilde(bilde){                           //denne funksjonen vil foregå når vi klikker på et av bildene 
+                helBildeBoks.style.display = "flex";                //gjør slik at bilde blir synlig når brukeren klikker på det.
+                helBilde.src = bilde;                               //opptadere kilden til bilde, slik at akkurat det bilde brukeren trykker på vises
+            }
+    
+            function lukkHelBilde(){                               //lukker bildet ved hjelp av x-knappen øverst til høyre
+                helBildeBoks.style.display = "none";               //viser siden med alle bildene framfor med et bilde i fokus. display:none er brukt mye i javascript for å vise og gjemme elementer uten å slette dem eller lage dem på nytt
+            }
+        </script>
+    
+</body>
+</html>

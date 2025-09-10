@@ -1,0 +1,164 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /*menybaren*/ 
+  .menybar {
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    z-index: 999;                               /*bestemmer hvilke element som kommer over et annet. I dette tilfelle skal menybaren være over de andre elementene under. Det elementet med høyest z-index blir plassert øverst.*/
+    top: 0;
+    width: 100%;
+    height: 50px; 
+    border-bottom: 1px solid #d3d3d3;
+    padding: 20px;
+    justify-content: space-between;
+  } 
+  
+  .menybar a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center; 
+    padding-top: 50%; 
+    padding-bottom: 50%;
+    padding: 20px 16px; 
+    font-size: 17px;
+    text-decoration: none;
+    margin-right: 50px; 
+  } 
+
+  /* når musepekeren er over så skifter skriften farge*/
+  .menybar a:hover{
+    color: #CD2E3A; 
+    transition: 0.8s;             /*hvor lang tid fargeskiftingen tar, her er den 0.8 sekunder som er realtivt fort*/
+  }
+
+  .logo{ 
+      width: 80px;
+      margin-left: 50px;
+      align-items: left;
+      margin-top: -18px;  
+  }
+
+
+    /* Bakgrunn og tekstboksen over bildet*/
+    #bakgrunn{
+      margin-top: 90px;
+      height: 80vh; 
+      width: 100%; 
+      background-image: url(./bilder/bakgrunnExploreSeoul.jpg);
+      background-size: cover;
+  }
+  
+  #bakgrunn h1{
+      font-size: 100px;
+      text-align: center;
+      color: white; 
+      padding: 250px; 
+  }
+  
+  .tekstBoks{
+    position: absolute; 
+    bottom: -30px; 
+    color: black; 
+    padding-left: 20px;
+    padding-right: 20px; 
+    background-color:white; 
+    height: 180px;
+    width: 60%; 
+    margin-right: 20%;
+    margin-left: 20%; 
+  }
+  
+  .tekstBoks h2{
+    font-size: 40px;
+    padding: 0px; 
+    text-align: center;
+  }
+
+  .tekstBoks p{
+    text-align: center;
+    margin-top: -10px; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+  }
+  
+  .innhold{
+    margin-top: 150px; 
+    display: flex;
+    flex-direction: left;
+    margin-left: 215px; 
+    gap: 100px; 
+    margin-bottom: 100px;
+  }
+  
+  .innhold img{
+    transform: 0.7s;
+    cursor: pointer; 
+    background-size: cover;
+    transform: scale (1);                                    /*her er bildet i normal størrelse, altså ved scale(1) */
+    height: 509px; 
+    width: 451px;
+    background-size: cover;
+  }
+
+  .innhold h2{
+    margin-top: 20px; 
+  }
+
+  /*får bilde til å zoome inn når musen er over bildet, altså hover*/
+  .innhold img:hover{
+    transform: scale(1.05)
+  }
+
+  /* Bilde slide show*/
+  .overskriftOverBildeGalleri{
+    text-align: center;
+    margin-top: -20px ;
+    font-size: 20px;
+  }
+
+  .slider{
+    display: grid; 
+    grid-auto-flow: column;
+    gap: 15px; 
+    overflow-y: auto;                   /*en skrollbar for brukeren som gjør det mulig å skrolle og se gjennom bildene */
+    overscroll-behavior-x: contain;     /* denne fohindrer brukeren i å skrolle utover bildene, altså det er ikke mulig å skrolle etter siste bilde*/
+    scroll-snap-type: x mandatory;      /*fører til en mer glidende skrolling, som er bedre for brukeren. "x-mandatory" er at brukeren scroller horisontalt framfor vertikalt */
+    scrollbar-width: none;              /* skrollbaren vises ikke på selve siden, men brukeren skroller via touch eller styreplate*/
+    margin-left: 30px;  
+    margin-right: 30px; 
+    margin-bottom: 30px; 
+  }
+
+  .slider img{
+    height: 420px; 
+    width: 640px; 
+  }
+
+  /*Share your Wonders delen helt nederst på nettsiden*/ 
+.shareYourWonders {
+  width: 100%; 
+  border-top: 1px solid #d3d3d3;
+}
+
+.bilderShareYourWonders{
+  display: flex;                            /* får elementene til å legge seg ved siden av hverandre*/
+  flex-direction: right;
+  height: 40px; 
+  padding: 20px;
+  margin-right: 34%; 
+  margin-left: 34%; 
+}
+
+.bilderShareYourWonders img{
+  height: 30px;
+}
+
+.bilderShareYourWonders p {
+  font-weight: bold; 
+  margin-top: 10px;
+}

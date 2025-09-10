@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity package</title>
+    <link rel="stylesheet" href="aktivitetsPakke.css">
+    <link rel="icon" type="image/x-icon" href="./bilder/korea.png">
+</head>
+<body>
+    <div class="menybar">
+        <a href="exploreSeoul.html">Explore Seoul</a>
+        <a href="culture.html">Culture</a>
+        <a href="attractionsAndActivities.html">Attractions and activities</a>
+        <a href="planYourTrip.html">Plan your trip</a>
+        <a href="index.html">Home</a>
+
+        <img src="./bilder/korea.png" alt="logo" class="logo">
+    </div> 
+
+    <div id="bakgrunn">
+        <img src="./bilder/aktivitetsPakkeBakgrunn.jpg">
+        <div class="overlag"></div>
+    </div>
+
+    <div class="overskriftAktivitet">                  <!--overskriften på siden-->            
+        <h1>Buy an activity package in South-Korea</h1>
+        <p> Welcome to our activity package system! South-Korea offers travellers a wide range of activites to try out, all from paragliding in the sky to scuba diving in the oceans of South-Korea. Additionally, Korea has numerous activites that are made for families. Order an activity package now!</p>
+        <br>
+        <p style="color:#CD2E3A; margin-top:-30px; font-weight: bolder;"> PS! All the activites are shown below!</p>
+    </div>
+
+    <!-- aktivitetspakken -->
+        <form onsubmit="return false;">
+        <p> Buy your activity package now! </p>
+        <div class="outdoor">
+            <label for="outdoor">Outdoor activities:</label>
+            <select id="outdoor">
+              <option value="Bungee Jumping">Bungee Jumping </option>
+              <option value="Paragliding">Paragliding </option>
+              <option value="Zip Lining">Zip Lining </option>
+            </select>
+        </div>
+
+        <div class="family">
+            <label for="family">Family-friendly activities:</label>
+            <select id="family">
+              <option value="Sea Life Aquarium Busan">Sea Life Aquarium Busan </option>
+              <option value="Lotte World"> Lotte World </option>
+              <option value="Seoul Grand Park"> Seoul Grand Park</option>
+            </select>
+        </div>
+
+        <div class="water">
+            <label for="water">Water activities: </label>
+            <select id="water">
+              <option value="Scuba diving">Scuba diving</option>
+              <option value="Surfing">Surfing </option>
+              <option value="Water rafting">Water rafting </option>
+            </select>
+        </div>
+
+        <div class="antallTimer">
+            <label for="antallTimer"> Hours for each activity:</label>
+            <select id="antallTimer">
+              <option value="1.5">1.5</option>
+              <option value="2">2</option>
+              <option value="2.5"> 2.5</option>
+            </select>
+        </div>
+
+         <!-- når brukeren klikker på den så blir aktivitetspakken bestilt. -->
+         <input id="button" type="submit" value="CONFIRM ORDER">
+
+        <!-- Her blir resultatet skrevet, altså order informasjonen-->
+        <div id="resultat"></div>   
+        </form>
+
+        <!-- bildegalleri med aktivitetene som tilbys -->
+        <div class="sliderOverskrift">
+            <h1> Our activites</h1>
+          </div>
+          <div class="slider">
+              <div class="bungeeJumping"> 
+                <img src="./bilder/bungeeJumping.jpg" alt="">
+                <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Bungee Jumping </figcaption>
+              </div>
+              <div class="paragliding">
+                <img src="./bilder/paragliding.jpg" alt="">
+                <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Paragliding</figcaption>
+              </div>
+              <div class="zipLining">
+                <img src="./bilder/zipLining.jpg" alt="">
+                <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Zip Lining</figcaption>
+              </div>
+              <div class="seaLifeBusan">
+                <img src="./bilder/seaLifeBusan2.jpg" alt=""> 
+                <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Sea Life Aquarium Busan</figcaption>
+              </div>
+              <div class="lotteWorld"> 
+                <img src="./bilder/lotteWorld2.jpg" alt="">
+                <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Lotte World</figcaption>
+              </div>
+              <div class="grandPark">
+                <img src="./bilder/grandPark.jpg" alt="">
+                <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Seoul Grand Park</figcaption>
+              </div>
+              <div class="scubaDiving">
+                <img src="./bilder/scubaDiving.jpg" alt="">
+                <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Scuba Diving</figcaption>
+              </div>
+              <div class="surfing">
+                <img src="./bilder/surfing.jpg" alt="">
+                <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Surfing</figcaption>
+              </div>
+              <div class="waterRafting">
+                <img src="./bilder/waterRafting.jpg" alt="">
+                <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Water Rafting</figcaption>
+              </div>
+          </div>
+ 
+    <script>
+        let outdoor = document.getElementById('outdoor'); 
+        let family = document.getElementById('family'); 
+        let water = document.getElementById('water'); 
+        let antallTimer = document.getElementById('antallTimer'); 
+        let knapp = document.querySelector('#button'); 
+        let resultat = document.getElementById('resultat');
+
+        knapp.addEventListener("click", beregnPris); 
+
+        //lager funksjonen beregn
+        function beregnPris (){
+            let outdoorPris = 500;                      //prisen for alle utendørs aktiviteten er 500 won
+            let familyPris = 1000;                      //prisen for alle familie aktiviteten er 500 won
+            let waterPris = 1500;                       //prisen for alle vann aktiviteten er 500 won
+            let tid = parseFloat(antallTimer.value);    //henter verdien for antall timer fra html-dokumentet 
+            let aktivitetPris = outdoorPris + familyPris + waterPris;               //lar den samlede aktivitetsprisen være prisen for utendørsaktivitene + familieaktiviten + vannaktiviten
+
+            let totalPris = aktivitetPris * tid;                                    //lar den total prisen være aktivitetsprisen ganget med tiden 
+
+            resultat.innerHTML = `Order summary:<br>    
+                                - Outdoor activity: ${outdoor.value}<br>
+                                - Family-friendly activity: ${family.value}<br>
+                                - Water activity: ${water.value} <br>                          
+                                - Hours for each activity: ${tid} <br>   
+                                - Total price: ₩${totalPris.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

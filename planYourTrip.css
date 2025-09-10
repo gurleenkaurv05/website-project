@@ -1,0 +1,404 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+  }
+  
+  /*menybaren*/ 
+  .menybar {
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    z-index: 999;                               /*bestemmer hvilke element som kommer over et annet. I dette tilfelle skal menybaren være over de andre elementene under. Det elementet med høyest z-index blir plassert øverst.*/
+    top: 0;
+    width: 100%;
+    height: 50px; 
+    border-bottom: 1px solid #d3d3d3;
+    padding: 20px; 
+    justify-content: space-between;
+  } 
+  
+  .menybar a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding-top: 50%; 
+    padding-bottom: 50%;
+    padding: 20px 16px; 
+    font-size: 17px;
+    text-decoration: none;
+    margin-right: 50px; 
+  } 
+
+  .menybar a:hover{
+    color: #CD2E3A; 
+    transition: 0.8s;
+  }
+  
+  .logo{ 
+      width: 80px;
+      margin-left: 50px;
+      align-items: left;
+      margin-top: -18px;  
+  }
+
+  /* Bakgrunn og tekstboksen over bildet*/
+  #bakgrunn{
+    margin-top: 90px; 
+    height: 80vh; 
+    width: 100%; 
+    background-image: url(./bilder/bakgrunnPlanYourTrip.jpg);
+    background-size: cover;
+}
+
+#bakgrunn h1{
+    font-size: 100px;
+    text-align: center;
+    color: white; 
+    padding: 250px; 
+}
+
+.tekstBoks{
+  position: absolute; 
+  bottom: -30px; 
+  color: black; 
+  padding-left: 20px;
+  padding-right: 20px; 
+  background-color:white; 
+  height: 180px; 
+  width: 60%; 
+  margin-right: 20%;
+  margin-left: 20%; 
+  cursor: pointer;
+}
+
+.tekstBoks h2{
+  font-size: 40px;
+  padding: 0px; 
+  text-align: center;
+}
+
+.tekstBoks p{
+  text-align: center;
+  margin-top: -10px; 
+  padding-left: 20px; 
+  padding-right: 20px; 
+}
+
+.innhold{
+  margin-top: 150px; 
+  display: flex;
+  flex-direction: left;
+  margin-left: 4%; 
+  margin-right: 5%; 
+  gap: 20px; 
+}
+
+.innhold img{
+  transform: 0.7s;
+  cursor: pointer; 
+  background-size: cover;
+  transform: scale (1);                                    /*her er bildet i normal størrelse, altså ved scale(1) */
+}
+
+.innhold h2{
+  margin-top: 20px; 
+}
+
+/*får bilde til å zoome inn når musen er over bildet, altså hover*/
+.innhold img:hover{
+  transform: scale(1.05)
+}
+
+.bilde h2{
+  text-align: center; 
+}
+
+/*bilbooking delen med den røde boksen over*/
+.bilbooking h2{
+  text-align: center;
+  font-size: 30px; 
+  margin-top: 40px;
+}
+
+.bilbooking img{
+  height: 100%; 
+  width: 1323px;
+  margin-left: 4%; 
+  margin-right: 4%;
+  margin-top: 50px;
+}
+
+.boks {                   /*boksen over bildet*/
+  margin-top: 530px;
+  margin-left: 100px; 
+  background-color: #CD2E3A;
+  padding: 10px; 
+  width: 400px;
+  position: absolute;           /*position: absoulute gjør det mulig for boksen å være over bildet. */
+  height: 130px;  
+}
+
+
+/* kortene med årstidene. Kan trykke å lese mer om været. */
+.aarstidOverskrift{
+  margin-top: 100px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.aarstid {
+  margin-bottom: 40px;
+  margin-left: 60px;
+  width: 1323px;
+  height: 100%; 
+  display: flex;
+  flex-direction: left;
+  gap: 76px; 
+  overflow: hidden; 
+}
+
+.aarstid img{
+  margin-top: 20px;
+  height: 361px;
+  width: 282px; 
+  object-fit: cover; 
+  cursor: pointer; 
+}
+
+/*vinter kortet sin layout*/
+.vinter {
+  overflow: hidden; 
+  align-items: center;
+  position: relative; 
+}
+
+.vinter:hover .kortBody1{
+   right: 0;
+   cursor: pointer; 
+}
+
+.kortBody1 {
+  width: 100%;
+  height: 100%;
+  top: 0;   
+  right: -100%;                                     /*her er right -100% mens, når musepekeren er over bildet er right 0, altså boksen kommer over bildet*/
+  position: absolute;                                       /* gjør det mulig for kortet å kommer over selve bildet*/
+  background-color: rgba(0, 0, 0, 0.063);                 /*gjennomsikitig lag over bildet*/
+  backdrop-filter: blur(5px);                                 /* gjør bildet litt blurry*/
+  color: white; 
+  font-size: 13px;  
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  transition: 1s;
+}
+
+.kortTittel1 {
+  text-align: center; 
+  text-transform: uppercase;
+  font-size: 25px; 
+}
+
+.kortInfo1{
+  padding: 5px; 
+  margin-top: -8px;  
+}
+
+.kortKnapp1{
+  margin-left: 10px; 
+  margin-right: 10px; 
+  margin-top: -5px; 
+  background-color: white; 
+  padding: 5px 5px;
+  border-radius: 5px;
+  border: none; 
+  outline: none;  
+  cursor: pointer; 
+  width: 180px; 
+}
+
+
+/*Vår kortet sin layout*/
+.vaar {
+  overflow: hidden; 
+  align-items: center;
+  position: relative; 
+}
+
+.vaar:hover .kortBody2{
+   right: 0;
+   cursor: pointer; 
+}
+
+.kortBody2 {
+  width: 100%;
+  height: 100%;
+  top: 0; 
+  right: -100%; 
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.133);
+  backdrop-filter: blur(5px);
+  color: white; 
+  font-size: 13px; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  transition: 1s;
+}
+
+.kortTittel2 {
+  text-align: center; 
+  text-transform: uppercase;
+  font-size: 25px; 
+}
+
+.kortInfo2{
+  padding: 5px; 
+  margin-top: -8px; 
+}
+
+.kortKnapp2{
+  margin-left: 8px; 
+  margin-right: 8px; 
+  margin-top: -5px; 
+  background-color: white; 
+  padding: 5px 5px;
+  border-radius: 5px;
+  border: none; 
+  outline: none;  
+  cursor: pointer; 
+  width: 180px; 
+}
+
+
+/*Sommer kortet sin layout*/
+.sommer {
+  overflow: hidden; 
+  align-items: center;
+  position: relative; 
+}
+
+.sommer:hover .kortBody3{
+   right: 0;
+   cursor: pointer; 
+}
+
+.kortBody3 {
+  width: 100%;
+  height: 100%;
+  top: 0; 
+  right: -100%; 
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.133);
+  backdrop-filter: blur(5px);
+  color: white; 
+  font-size: 13px; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  transition: 1s;
+}
+
+.kortTittel3 {
+  text-align: center; 
+  text-transform: uppercase;
+  font-size: 25px; 
+}
+
+.kortInfo3 {
+  padding: 5px; 
+  margin-top: -8px; 
+}
+
+.kortKnapp3 {
+  margin-left: 8px; 
+  margin-right: 8px; 
+  margin-top: -8px; 
+  background-color: white; 
+  padding: 5px 5px;
+  border-radius: 5px;
+  border: none; 
+  outline: none;  
+  cursor: pointer; 
+  width: 180px; 
+}
+
+
+/*høst kortet*/
+.host {
+  overflow: hidden; 
+  align-items: center;
+  position: relative; 
+}
+
+.host:hover .kortBody4{
+   right: 0;
+   cursor: pointer; 
+}
+
+.kortBody4 {
+  width: 100%;
+  height: 100%;
+  top: 0; 
+  right: -100%; 
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.133);
+  backdrop-filter: blur(5px);
+  color: white; 
+  font-size: 13px; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  transition: 1s;
+}
+
+.kortTittel4 {
+  text-align: center; 
+  text-transform: uppercase;
+  font-size: 25px; 
+}
+
+.kortInfo4 {
+  padding: 5px; 
+  margin-top: -8px; 
+}
+
+.kortKnapp4 {
+  margin-left: 8px; 
+  margin-right: 8px; 
+  margin-top: -5px; 
+  background-color: white; 
+  padding: 5px 5px;
+  border-radius: 5px;
+  border: none; 
+  outline: none;  
+  cursor: pointer; 
+  width: 180px; 
+}
+
+
+/*Share your Wonders delen helt nederst på nettsiden*/ 
+.shareYourWonders {
+  width: 100%; 
+  border-top: 1px solid #d3d3d3;
+}
+
+.bilderShareYourWonders{
+  display: flex; 
+  flex-direction: right;
+  height: 40px; 
+  padding: 20px;
+  margin-right: 34%; 
+  margin-left: 34%; 
+}
+
+.bilderShareYourWonders img{
+  height: 30px;
+}
+
+.bilderShareYourWonders p {
+  font-weight: bold; 
+  margin-top: 10px;
+}

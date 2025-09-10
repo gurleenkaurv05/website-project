@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a car in South-Korea</title>
+    <link rel="stylesheet" href="bilBooking.css">
+    <link rel="icon" type="image/x-icon" href="./bilder/korea.png">
+</head>
+<body>
+    <div class="menybar">
+        <a href="exploreSeoul.html">Explore Seoul</a>
+        <a href="culture.html">Culture</a>
+        <a href="attractionsAndActivities.html">Attractions and activities</a>
+        <a href="planYourTrip.html">Plan your trip</a>
+        <a href="index.html">Home</a>
+
+        <img src="./bilder/korea.png" alt="logo" class="logo">
+    </div> 
+
+    <!-- bakgrunnen på følgende side-->
+    <div id="bakgrunn">
+        <img src="./bilder/bakgrunnBil.jpg">
+        <div class="overlag"></div>
+    </div>
+
+    <!-- bilbookingen -->  
+   <div class="overskriftBil">                  <!--overskriften på siden-->            
+        <h1>Rent a car in South-Korea</h1>
+        <p> Welcome to our car rental service! We understand that when it comes to planning your trip, reliable and convenient transportation is key. That's why we offer a range of vehicles to suit your needs, whether you're looking for a compact car for a weekend getaway or a spacious SUV for a family road trip. <br> Rent a car now!</p>
+    </div>
+
+<form onsubmit="return false;">
+    <p> Book your car now! </p>
+    <div class="hentingOgLevering">                                     <!-- div class for henting og levering-->
+    <label for="hentested">Pickup location:</label>
+    <select id="hentested">
+      <option value="Seoul">Seoul</option>
+      <option value="Busan">Busan</option>
+      <option value="Incheon">Incheon</option>
+    </select>
+
+    <label for="levering">Dropoff location:</label>
+    <select id="levering">
+      <option value="Seoul">Seoul</option>
+      <option value="Busan">Busan</option>
+      <option value="Incheon">Incheon</option>
+    </select>
+    </div>
+
+    <div class="antallBilder">
+    <label for="antallBiler">Number of cars:</label>
+    <select id="antallBiler">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    </div>
+
+    <div class="bilType">
+    <label for="bilType">Car brand(see vehicles below):</label>
+    <select id="bilType">
+      <option value="Porsche">Porsche (₩100/day)</option>
+      <option value="BMW">BMW (₩75/day)</option>
+      <option value="Audi">Audi (₩65/day)</option>
+      <option value="G Wagon">G Wagon (₩110/day)</option>
+      <option value="Mercedes">Mercedes (₩120/day)</option>
+      <option value="Rolls Royce">Rolls Royce (₩200/day)</option>
+    </select>
+    </div>
+
+    <label for="antallDager">Number of days:</label>
+    <input type="number" id="antallDager" min="1" max="10" value="1">
+    <br>                                                                <!--lager et linjeskift mellom knappen og antall dager-->
+    <input id="button" type="submit" value="CONFIRM CAR BOOKING" onclick="bookBil()">     <!-- når brukeren klikker på den så blir bilen booket. -->
+
+    <div id="resultat"></div>                                       <!-- resultatet printes ved hjelp av denne under book-knappen. Når knappen trykkes blir informasjon-funksjonen utført -->
+</form>
+
+
+<!-- bildegalleriet nederst med de biltypene som tilbys til forbrukeren -->
+<div class="sliderOverskrift">
+  <h1> Our vehicles</h1>
+</div>
+<div class="slider">
+    <div class="porsche"> 
+      <img src="./bilder/porsche.jpg" alt="">
+      <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Porsche </figcaption>
+    </div>
+    <div class="bmw">
+      <img src="./bilder/bmw.jpg" alt="">
+      <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> BMW</figcaption>
+    </div>
+    <div class="audi">
+      <img src="./bilder/audi.jpg" alt="">
+      <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Audi</figcaption>
+    </div>
+    <div class="gWagon">
+      <img src="./bilder/gWagon.jpg" alt=""> 
+      <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> G Wagon (Mercedes)</figcaption>
+    </div>
+    <div class="mercedes"> 
+      <img src="./bilder/mercedes.jpg" alt="">
+      <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Mercedes</figcaption>
+    </div>
+    <div class="rollsRoyce">
+      <img src="./bilder/rollsRoyce.jpg" alt="">
+      <figcaption style="margin-top: 15px; font-weight: bold; text-align: center; color:#CD2E3A;"> Rolls Royce</figcaption>
+    </div>
+</div>
+
+  <script>
+    function bookBil() {
+      // lager en kobling med html-delen. 
+      let hentested = document.getElementById('hentested').value;                     //.value henter det som brukeren har skrevet inn. 
+      let levering = document.getElementById('levering').value;
+      let antallBiler = parseInt(document.getElementById('antallBiler').value);
+      let bilType = document.getElementById('bilType').value;
+      let antallDager = parseInt(document.getElementById('antallDager').value);         //parseInt-funksjonen returner det første tallet i en string. Her henter den tallet. 
+
+      //lager en del som regner prisen
+      let startPris = 0;                    //lar startprsien være like 0, altså før det bestilles noe. 
+
+      switch (bilType) {                    // benytter switch-metoden for å gi hver biltype ulike priser. 
+        case 'Porsche':
+          startPris = 100;
+          break;                            
+        case 'BMW':
+          startPris = 75;
+          break;
+        case 'Audi':
+          startPris = 65;
+          break;
+        case 'G Wagon':
+          startPris = 110;
+          break;
+        case 'Mercedes': 
+          startPris = 120;
+          break;
+        case 'Rolls Royce':
+          startPris = 200; 
+          break;
+      }
+
+      let totalPris = startPris * antallDager * antallBiler;         // setter totalprisen lik start prisen (biltype) + antall dager bilen leies for + antall biler som leies
+
+      if (hentested !== levering) {                                 // hvis hentestedet og leveringsstedet ikke er det samme øker prisen med 70.
+        totalPris += 70 * antallBiler;                               //prisen øker dermed med 70 dollar for hver bil som skal hentes og leveres på ulike steder. hvis brukeren trenger 2 biler blir prisen 140 dollar framfor 70 dollar for en bil
+      } 
+
+      // når brukeren trykker på knappen "Book" blir resultatet skrevet ut slik som vist under 
+      let resultat = document.getElementById('resultat');           // benytter <br> for å få informasjonen under hverandre. 
+      resultat.innerHTML = `Booking summary:<br>                              
+                              - Pickup location: ${hentested}<br>                 
+                              - Dropoff location: ${levering}<br>
+                              - Number of cars: ${antallBiler}<br>
+                              - Car brand: ${bilType}<br>   
+                              - Number of days: ${antallDager}<br>
+                              - Total price: ₩${totalPris.toFixed(2)}`;                //prisen vises med to desimaler, altså .toFixed(2)- funksjonen
+    }     //${} lar oss hente de verdiene som skal angis her. 
+
+  </script>
+</body>
+</html>
