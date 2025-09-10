@@ -11,7 +11,7 @@ To learn the basics of web development by using HTML, CSS, and JavaScript in a p
 🛠️ **Technologies Used**
 - HTML – for structuring the content of the website
 - CSS – for styling and layout
-- JavaScript – for adding simple interactivity
+- JavaScript – for adding simple interactivity, written inline within the <script>-tag in the HTML files
 - Visual Studio Code - code editor used for writing the code in various languages
 
 📄 **Website Contents**
