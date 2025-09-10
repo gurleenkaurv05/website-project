@@ -5,13 +5,14 @@ The task was to create a website about a travel destination, and I chose South K
 **NOTE!** The following file directs to the home page: index.html
 
 🎯 **Purpose**
+
 To learn the basics of web development by using HTML, CSS, and JavaScript in a project based on a self-chosen travel destination.
 
 
 🛠️ **Technologies Used**
-HTML – for structuring the content of the website
-CSS – for styling and layout
-JavaScript – for adding simple interactivity
+- HTML – for structuring the content of the website
+- CSS – for styling and layout
+- JavaScript – for adding simple interactivity
 
 📄 **Website Contents**
 - Homepage with an introduction to the destination
