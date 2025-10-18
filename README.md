@@ -1,4 +1,6 @@
 # Website Project: Travel Destination
+**EDIT!** The video that is supposed to be shown on the home page is not working. I have tried fixing it, but it is not working. 
+
 This project was completed as part of the subject Information Technology 1 in upper secondary school.
 The task was to create a website about a travel destination, and I chose South Korea.
 
